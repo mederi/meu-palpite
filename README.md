@@ -5,7 +5,7 @@ Sistema de Bolão para a copa do Brasil
 
 Requisitos
 ----------
-* PHP >= 5.4
+* PHP 5.4
 * Composer
 
 Como Instalar
@@ -15,6 +15,7 @@ Como Instalar
 git clone https://github.com/mederi/meu-palpite.git
 cd meu-palpite
 composer install
+php bin/install_db.php
 php -S localhost:8000 -t web
 ```
 
