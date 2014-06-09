@@ -23,5 +23,6 @@ Executar os Testes
 ------------------
 
 ```shell
-phpunit tests
+cd meu-palpite
+php vendor/bin/phpunit tests
 ```
