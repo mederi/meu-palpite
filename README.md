@@ -3,7 +3,7 @@ meu-palpite
 
 Sistema de Bolão para a copa do Brasil
 
-Requisitos
+Pré-Requisitos
 ----------
 * PHP 5.4
 * Composer

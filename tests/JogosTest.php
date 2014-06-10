@@ -3,16 +3,15 @@
 namespace Test;
 
 use MeuPalpite\Models\Jogos;
-use Respect\Relational\Mapper;
+use MyLib\Database;
 
 class JogosTest extends \PHPUnit_Framework_TestCase
 {
 	protected $jogos;
 
 	public function setUp()
-	{
-		$mapper = new Mapper(new \PDO('sqlite:db/meupalpite.sq3'));
-		$this->jogos = new Jogos($mapper);
+	{				
+		$this->jogos = new Jogos((new Database('sqlite:db/meupalpite.sq3')));
 	}
 	public function testListarJogos()
 	{

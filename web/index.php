@@ -1,21 +1,28 @@
 <?php
 
-require '../vendor/autoload.php';
+require_once __DIR__.'/../vendor/autoload.php';
+
+define('PATH_VIEW', __DIR__ . '/../app/views');
 
 use Silex\Application;
 use Silex\Provider\TwigServiceProvider;
+use MyLib\Database;
 
-$app = new Application();
+$app = new Application;
+
+$app['database'] = new Database('sqlite:../db/meupalpite.sq3');
 
 $app['debug'] = true;
 
 $app->register(new TwigServiceProvider(), array(
-  'twig.path'=> __DIR__.'/../app/views'
+  'twig.path'=> PATH_VIEW
 ));
 
 $app->get('/jogos/listar', function() use ($app) {
+	$jogos = new MeuPalpite\Models\Jogos($app['database']);
+
   return $app['twig']->render('jogos/listar.twig', array(
-  	'name'=>'copa 2014'
+  	'jogos' => $jogos->getAll()
   ));
 });
 

@@ -4,16 +4,16 @@ namespace MeuPalpite\Models;
 
 class Times
 {
-	protected $mapper;
+	protected $database;
 
-	public function __construct($mapper)
+	public function __construct($database)
 	{
-		$this->mapper = $mapper;
+		$this->database = $database;
 	}
 
 	public function getAll()
 	{
-		return $this->mapper->times->fetchAll();
+		return $this->database->getMapper()->times->fetchAll();
 	}
 
 }
