@@ -4,12 +4,16 @@ namespace MeuPalpite\Models;
 
 class Times
 {
+	protected $mapper;
+
+	public function __construct($mapper)
+	{
+		$this->mapper = $mapper;
+	}
 
 	public function getAll()
 	{
-		$times = [];		
-
-		return $times;
+		return $this->mapper->times->fetchAll();
 	}
 
 }
