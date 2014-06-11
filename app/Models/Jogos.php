@@ -11,17 +11,16 @@ class Jogos
 		$this->database = $database;
 	}
 
-	public function getAll()
+	public function getAll($times = array())
 	{
-	/*return $this->database->getDb()
-		->select('*')
-		->from('jogos', 'times as times_casa', 'times as times_visitante')
-		->where(array(
-			'jogos.time_id_casa' => 'times_casa.id'
-			))
-		->fetchAll();		*/
+		$jogos = $this->database->getMapper()->jogos->fetchAll();		
+		if (! empty($times))
+			array_map(function($jogo) use ($times) {				
+				$jogo->time_casa = $times[$jogo->time_id_casa - 1];
+				$jogo->time_visitante = $times[$jogo->time_id_visitante - 1];
+				return $jogo;
+			}, $jogos);
 
-		return $this->database->getMapper()->jogos->fetchAll();
-
+		return $jogos;
 	}
 }

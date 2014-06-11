@@ -1,2 +1,23 @@
+<link rel="stylesheet" type="text/css" href="/assets/flags/flags.css">
 <h1>Listar Jogos da Copa 2014</h1>
-{{dump(jogos)}}
+<style>
+	.placar input {
+		width: 30px;
+	}
+	.placar .time-casa {
+		text-align: right;
+	}
+</style>	
+<table class="placar">
+	{% for jogo in jogos %}
+		<tr>
+			<td class="time-casa time-nome">{{ jogo.time_casa.nome }}</td>
+			<td class="bandeira"><img class="flag flag-{{ jogo.time_casa.code }}" alt="{{ jogo.time_casa.nome }}" /></td>
+			<td><input name="placa_1" /></td>		
+			<td>X</td>
+			<td><input name="placa_2" /></td>			
+			<td><img src="blank.gif" class="flag flag-{{ jogo.time_visitante.code }}" alt="{{ jogo.time_visitante.nome }}" /></td>
+			<td class="time-visitante time-nome">{{ jogo.time_visitante.nome }}</td>					
+		</tr>	
+	{% endfor %}	
+</table>

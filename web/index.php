@@ -20,9 +20,10 @@ $app->register(new TwigServiceProvider(), array(
 
 $app->get('/jogos/listar', function() use ($app) {
 	$jogos = new MeuPalpite\Models\Jogos($app['database']);
+	$times = new MeuPalpite\Models\Times($app['database']);
 
   return $app['twig']->render('jogos/listar.twig', array(
-  	'jogos' => $jogos->getAll()
+  	'jogos' => $jogos->getAll($times->getAll())
   ));
 });
 
