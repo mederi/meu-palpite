@@ -3,6 +3,7 @@
 require_once __DIR__.'/../vendor/autoload.php';
 
 define('PATH_VIEW', __DIR__ . '/../app/views');
+define('PATH_LAYOUT', __DIR__ . '/../app/views/layout.twig');
 
 use Silex\Application;
 use Silex\Provider\TwigServiceProvider;
@@ -15,7 +16,7 @@ $app['database'] = new Database('sqlite:../db/meupalpite.sq3');
 $app['debug'] = true;
 
 $app->register(new TwigServiceProvider(), array(
-  'twig.path'=> PATH_VIEW
+  'twig.path' => PATH_VIEW, 'twig.templates' => array(PATH_LAYOUT)
 ));
 
 $app->get('/', function() use ($app) {

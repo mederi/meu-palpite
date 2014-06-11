@@ -1,2 +1,3 @@
 vendor/*
 db/*
+web/assets/bower_components
