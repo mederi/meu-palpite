@@ -18,6 +18,10 @@ $app->register(new TwigServiceProvider(), array(
   'twig.path'=> PATH_VIEW
 ));
 
+$app->get('/', function() use ($app) {
+	return $app->redirect('/jogos/listar');
+});
+
 $app->get('/jogos/listar', function() use ($app) {
 	$jogos = new MeuPalpite\Models\Jogos($app['database']);
 	$times = new MeuPalpite\Models\Times($app['database']);
