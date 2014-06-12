@@ -12,8 +12,12 @@
 	border-bottom: 1px solid #ddd;	
 }
 
-.placar .data-jogo td {
-	margin-top: 50px;
+.placar .data-jogo {
+	margin-top: 50px!important;
+}
+
+.placar input {
+	text-align: center;
 }
 
 .center {

@@ -19,9 +19,9 @@
 			<tr>									
 				<td class="time-casa time-nome">{{ jogo.time_casa.nome }}</td>
 				<td class="bandeira"><img class="flag flag-{{ jogo.time_casa.code }}" alt="{{ jogo.time_casa.nome }}" /></td>
-				<td><input name="palpite-casa" /></td>		
+				<td><input name="palpite-casa" maxlength="2" /></td>		
 				<td>{{jogo.hora}}</td>
-				<td><input name="palpite-visitante" /></td>			
+				<td><input name="palpite-visitante" maxlength="2" /></td>			
 				<td><img class="flag flag-{{ jogo.time_visitante.code }}" alt="{{ jogo.time_visitante.nome }}" /></td>
 				<td class="time-visitante time-nome">{{ jogo.time_visitante.nome }}</td>					
 			</tr>		
