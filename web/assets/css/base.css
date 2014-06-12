@@ -8,6 +8,14 @@
 	padding: 2px;
 }
 
+.placar .data-jogo {
+	border-bottom: 1px solid #ddd;	
+}
+
+.placar .data-jogo td {
+	margin-top: 50px;
+}
+
 .center {
 	text-align: center;
 }
