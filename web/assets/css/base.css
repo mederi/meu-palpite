@@ -4,3 +4,10 @@
 .placar .time-casa {
 	text-align: right;
 }
+.placar td {
+	padding: 2px;
+}
+
+.center {
+	text-align: center;
+}

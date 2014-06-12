@@ -2,22 +2,25 @@
 
 {% block style %}
 	{{ parent() }}
-	<link rel="stylesheet" type="text/css" href="/assets/flags/flags.css">
+	<link rel="stylesheet" type="text/css" href="/assets/flags/flags.css">	
 {% endblock %}
 
 {% block content %}	
-	<h1>Listar Jogos da Copa 2014</h1>
-	<table class="placar">
-		{% for jogo in jogos %}
-			<tr>
-				<td class="time-casa time-nome">{{ jogo.time_casa.nome }}</td>
-				<td class="bandeira"><img class="flag flag-{{ jogo.time_casa.code }}" alt="{{ jogo.time_casa.nome }}" /></td>
-				<td><input name="placa_1" /></td>		
-				<td>X</td>
-				<td><input name="placa_2" /></td>			
-				<td><img class="flag flag-{{ jogo.time_visitante.code }}" alt="{{ jogo.time_visitante.nome }}" /></td>
-				<td class="time-visitante time-nome">{{ jogo.time_visitante.nome }}</td>					
-			</tr>	
-		{% endfor %}
-	</table>
+	<div class="col-md-6 col-md-offset-3">
+		<h1 class="center">Jogos da Copa 2014</h1>
+		<p class="lead center">Faça já suas apostas!</p>
+		<table class="placar">
+			{% for jogo in jogos %}
+				<tr>
+					<td class="time-casa time-nome">{{ jogo.time_casa.nome }}</td>
+					<td class="bandeira"><img class="flag flag-{{ jogo.time_casa.code }}" alt="{{ jogo.time_casa.nome }}" /></td>
+					<td><input name="palpite-casa" /></td>		
+					<td>X</td>
+					<td><input name="palpite-visitante" /></td>			
+					<td><img class="flag flag-{{ jogo.time_visitante.code }}" alt="{{ jogo.time_visitante.nome }}" /></td>
+					<td class="time-visitante time-nome">{{ jogo.time_visitante.nome }}</td>					
+				</tr>	
+			{% endfor %}
+		</table>
+	</div>	
 {% endblock %}
